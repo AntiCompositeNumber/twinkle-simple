@@ -3,6 +3,7 @@ import messages from './messages.json';
 import mwMessageList from './mw-messages';
 
 // import modules
+import { Xfd } from './xfd';
 import { Fluff } from './fluff';
 
 // no customisation; import directly from core
@@ -18,7 +19,7 @@ if (!Morebits.userIsInGroup('autoconfirmed') && !Morebits.userIsInGroup('confirm
 
 Twinkle.userAgent = `Twinkle (${mw.config.get('wgWikiID')})`;
 
-Twinkle.summaryAd = ' ([[Project:TW|TW]])';
+Twinkle.summaryAd = ' ([[WP:TW|TW]])';
 
 Twinkle.changeTags = '';
 
@@ -27,7 +28,7 @@ Twinkle.messageOverrides = messages;
 Twinkle.extraMwMessages = mwMessageList;
 
 // List of module classes enabled
-Twinkle.registeredModules = [Fluff, Diff];
+Twinkle.registeredModules = [Xfd, Fluff, Diff];
 
 /**
  * Adjust the following configurations if necessary

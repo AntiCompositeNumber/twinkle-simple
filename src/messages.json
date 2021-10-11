@@ -1,3 +1,6 @@
 {
-  "@comment": "This file contains project-specific overrides for twinkle-core messages."
+	"@comment": "This file contains project-specific overrides for twinkle-core messages.",
+    "bullet-separator": " \u2022 ",
+    "xfd-venue-label": "Select wanted type of category: ",
+    "xfd-venue-tooltip": "This default should be the most appropriate, as no other deletion discussion pages exist here."
 }
