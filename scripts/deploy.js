@@ -100,7 +100,10 @@ class Deploy {
 		} else {
 			if (!config.apiUrl) {
 				if (Object.keys(config).length) {
-					log('yellow', 'Tip: you can avoid this prompt by setting the apiUrl as well in credentials.json');
+					log(
+						'yellow',
+						'Tip: you can avoid this prompt by setting the apiUrl as well in credentials.json'
+					);
 				}
 				const site = await input('> Enter sitename (eg. en.wikipedia.org)');
 				config.apiUrl = `https://${site}/w/api.php`;

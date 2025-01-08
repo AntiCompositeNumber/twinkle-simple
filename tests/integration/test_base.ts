@@ -57,7 +57,9 @@ export async function loadTwinkle() {
 	// we can do without the css peer gadget
 	await page.addStyleTag({
 		content:
-			(await readFile(twinkleCore + 'morebits/morebits.css')) + '\n' + (await readFile(repoRoot + 'src/twinkle.css')),
+			(await readFile(twinkleCore + 'morebits/morebits.css')) +
+			'\n' +
+			(await readFile(repoRoot + 'src/twinkle.css')),
 	});
 	await page.evaluate(await readFile(twinkleCore + 'morebits/morebits.js'));
 	await page.evaluate(await readFile(repoRoot + 'build/twinkle.js'));

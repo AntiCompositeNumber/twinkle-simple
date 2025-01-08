@@ -201,11 +201,11 @@ XfdCore.modeList = [Rfd];
 
 export class Xfd extends XfdCore {
 	portletName = 'RfD';
-	windowTitle = "Nominate for deletion (RfD)";
+	windowTitle = 'Nominate for deletion (RfD)';
 
 	addMenu() {
 		this.portletName = 'RfD';
-		super.addMenu()
+		super.addMenu();
 	}
 	footerlinks = {
 		'Deletion policy': 'Wikipedia:Deletion policy',

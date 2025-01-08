@@ -1,10 +1,11 @@
-This directory contains scripts used for *developing* twinkle.
+This directory contains scripts used for _developing_ twinkle.
 
-----
+---
 
 Format for credentials.json file:
 
 Set up a bot password via [[Special:BotPasswords]]
+
 ```json
 {
 	"apiUrl": "https://en.wikipedia.org/w/api.php",
@@ -16,6 +17,7 @@ Set up a bot password via [[Special:BotPasswords]]
 OR
 
 Set up an owner-only OAuth credential via [meta:Special:OAuthConsumerRegistration/propose](https://meta.wikimedia.org/wiki/Special:OAuthConsumerRegistration/propose)
+
 ```json
 {
 	"apiUrl": "https://en.wikipedia.org/w/api.php",
@@ -28,6 +30,6 @@ Set up an owner-only OAuth credential via [meta:Special:OAuthConsumerRegistratio
 }
 ```
 
-Using OAuth will make `server.js` slightly faster in disabling the twinkle gadget version.   
+Using OAuth will make `server.js` slightly faster in disabling the twinkle gadget version.
 
 IMPORTANT: Never commit this file to the repository!

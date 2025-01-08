@@ -18,11 +18,14 @@ function isGitWorkDirClean() {
 function makeHeader() {
 	// This header comment is accurate only if grunt build is run with a clean
 	// working directory.
-	let includeCommitHashInComment = isGitWorkDirClean() || console.warn('\x1b[31m%s\x1b[0m', // red
-		'[WARN] Git working directory is not clean.');
+	let includeCommitHashInComment =
+		isGitWorkDirClean() ||
+		console.warn(
+			'\x1b[31m%s\x1b[0m', // red
+			'[WARN] Git working directory is not clean.'
+		);
 
-	let header =
-`/*  _______________________________________________________________________________	
+	let header = `/*  _______________________________________________________________________________	
  * |                                                                               |
  * |                     === WARNING: GLOBAL GADGET FILE ===                       |
  * |                   Changes to this page affect many users.                     |
@@ -34,8 +37,7 @@ function makeHeader() {
 `;
 	if (includeCommitHashInComment) {
 		const commitSHA = execSync('git rev-parse HEAD').toString().trim();
-		header +=
-` * This build was generated from the source files at the repository as of the commit
+		header += ` * This build was generated from the source files at the repository as of the commit
  * ${commitSHA}. You can browse the repo at that point in time using this link:
  * https://github.com/AntiCompositeNumber/twinkle-simple/tree/${commitSHA}
  * Changes between two commits of Twinkle can be compared using
@@ -43,8 +45,7 @@ function makeHeader() {
 `;
 	}
 
-	header +=
-` */
+	header += ` */
 /* <nowiki> */
 `;
 	return header;
@@ -69,15 +70,16 @@ module.exports = function (grunt) {
 					// Do this ONLY if you are sure all messages have been translated into your local language,
 					// otherwise users will see message keys
 					new webpack.DefinePlugin({
-						EXCLUDE_ENGLISH_MESSAGES: Boolean(args.excludeEnglishMessages)
-					})
+						EXCLUDE_ENGLISH_MESSAGES: Boolean(args.excludeEnglishMessages),
+					}),
 				],
 				optimization: {
-					minimizer: [
-						new TerserPlugin({
-							extractComments: /@preserve/,
-						}),
-					],
+					minimize: false,
+					//minimizer: [
+					//    new TerserPlugin({
+					//        extractComments: /@preserve/,
+					//    }),
+					//],
 				},
 				performance: {
 					hints: false,
